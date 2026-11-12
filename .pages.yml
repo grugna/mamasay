@@ -1,0 +1,237 @@
+# Pages CMS configuration (https://pagescms.org)
+# Sign in at https://app.pagescms.org with GitHub, pick the "mamasay" repo, and edit the
+# "Website content" form. Saving commits to GitHub and the site republishes in ~1 minute.
+
+media:
+  input: public/images
+  output: /images
+
+content:
+  - name: site
+    label: Website content
+    type: file
+    path: src/content/site.json
+    format: json
+    fields:
+      - name: hero
+        label: Top of page (hero)
+        type: object
+        fields:
+          - { name: badge, label: Small badge above headline, type: string }
+          - { name: headline1, label: Headline, type: string }
+          - { name: headline2, label: Headline (second line), type: string }
+          - { name: lead, label: Intro sentence, type: text }
+          - { name: sub, label: Sub-line, type: text }
+          - { name: emailPlaceholder, label: Email box placeholder, type: string }
+          - { name: button, label: Sign-up button text, type: string }
+          - { name: perks, label: Three small perks under the form, type: string, list: true }
+          - name: photo
+            label: Hero photo
+            type: object
+            fields:
+              - { name: image, label: Image, type: image }
+              - { name: alt, label: Photo description (for screen readers), type: string }
+
+      - name: today
+        label: '"Today" card on the hero photo'
+        type: object
+        fields:
+          - { name: title, type: string }
+          - { name: morningLabel, type: string }
+          - { name: morningText, type: string }
+          - { name: eveningLabel, type: string }
+          - { name: eveningText, type: string }
+          - { name: memoryLabel, type: string }
+          - { name: memoryText, type: string }
+
+      - name: how
+        label: How it works
+        type: object
+        fields:
+          - { name: eyebrow, type: string }
+          - { name: title, type: string }
+          - name: steps
+            label: Steps (keep exactly 3)
+            type: object
+            list: true
+            fields:
+              - { name: title, type: string }
+              - { name: text, type: text }
+
+      - name: memories
+        label: Core memories
+        type: object
+        fields:
+          - { name: eyebrow, type: string }
+          - { name: title, type: string }
+          - { name: body, label: Paragraph, type: text, description: 'Formatting: **bold**, *italic*' }
+          - name: items
+            label: Example memory cards
+            type: object
+            list: true
+            fields:
+              - { name: date, type: string }
+              - { name: text, type: string }
+              - name: photo
+                label: Photo (optional)
+                type: object
+                fields:
+                  - { name: image, type: image }
+                  - { name: alt, label: Photo description, type: string }
+
+      - name: story
+        label: Founder story
+        type: object
+        fields:
+          - { name: eyebrow, type: string }
+          - { name: title, type: string }
+          - { name: paragraphs, label: Story paragraphs, type: text, list: true }
+          - { name: signature, label: Sign-off, type: string, description: 'The word "mamasays" gets the logo styling automatically' }
+          - name: photo
+            type: object
+            fields:
+              - { name: image, type: image }
+              - { name: alt, label: Photo description, type: string }
+
+      - name: blur
+        label: '"Beauty in the blur" section'
+        type: object
+        fields:
+          - { name: title, type: string }
+          - { name: body1, type: text, description: 'Formatting: **bold**, *italic*, __big accent__' }
+          - { name: body2, type: text, description: 'Formatting: **bold**, *italic*, __big accent__' }
+          - { name: moments, label: Floating moments (best with 8-12), type: string, list: true }
+
+      - name: firsts
+        label: Your firsts
+        type: object
+        fields:
+          - { name: eyebrow, type: string }
+          - { name: titleA, label: Headline (regular), type: string }
+          - { name: titleB, label: Headline (italic), type: string }
+          - { name: body1, type: text }
+          - { name: body2, type: text, description: 'Formatting: **bold**, *italic*' }
+          - name: pairs
+            label: Their first / your first
+            type: object
+            list: true
+            fields:
+              - { name: hers, label: Hers, type: string }
+              - { name: yours, label: Yours, type: string }
+          - { name: cta, label: Button text, type: string }
+
+      - name: night
+        label: Middle-of-the-night section
+        type: object
+        fields:
+          - { name: eyebrow, type: string }
+          - { name: title, type: string }
+          - { name: body, type: text, description: 'Formatting: **bold**, *italic*' }
+
+      - name: name
+        label: Why "mamasays" (blue section)
+        type: object
+        fields:
+          - { name: eyebrow, type: string }
+          - { name: body1, type: text }
+          - { name: body2, type: text }
+          - { name: saidLabel, type: string }
+          - { name: said, label: What she said, type: string, list: true }
+          - { name: sayLabel, type: string }
+          - { name: say, label: What I say (after the "mamasays" logo), type: string, list: true }
+          - { name: closing1, type: string }
+          - { name: closing2, type: string }
+
+      - name: join
+        label: Sign-up section
+        type: object
+        fields:
+          - { name: title, type: string }
+          - { name: intro, type: text }
+          - { name: perks, label: Three perks, type: string, list: true }
+          - { name: nameLabel, type: string }
+          - { name: emailLabel, type: string }
+          - { name: emailPlaceholder, type: string }
+          - { name: button, type: string }
+
+      - name: signup
+        label: Sign-up messages
+        type: object
+        fields:
+          - { name: successMessage, label: After a successful sign-up, type: text }
+          - { name: errorMessage, label: If something goes wrong, type: text }
+
+      - name: privacy
+        label: Privacy text (footer)
+        type: object
+        fields:
+          - { name: title, type: string }
+          - { name: paragraphs, type: text, list: true, description: 'Links: [text](mailto:you@example.com)' }
+
+      - name: terms
+        label: Terms text (footer)
+        type: object
+        fields:
+          - { name: title, type: string }
+          - { name: paragraphs, type: text, list: true }
+
+      - name: footer
+        label: Footer
+        type: object
+        fields:
+          - { name: copyright, type: string }
+          - { name: contactEmail, type: string }
+          - { name: pauseLabel, type: string }
+          - { name: playLabel, type: string }
+
+      - name: consent
+        label: Cookie banner text (shown only in EU/UK/California)
+        type: object
+        fields:
+          - { name: title, type: string }
+          - { name: text, type: text }
+          - { name: accept, type: string }
+          - { name: decline, type: string }
+          - { name: manageLabel, type: string }
+
+      - name: palette
+        label: Colors (hex, like #E1BED4)
+        type: object
+        fields:
+          - { name: highlight, label: Headline highlight, type: string, pattern: '^#[0-9A-Fa-f]{6}$' }
+          - { name: bandA, label: Top stripe 1, type: string, pattern: '^#[0-9A-Fa-f]{6}$' }
+          - { name: bandB, label: Top stripe 2, type: string, pattern: '^#[0-9A-Fa-f]{6}$' }
+          - { name: bandC, label: Bottom stripe 1, type: string, pattern: '^#[0-9A-Fa-f]{6}$' }
+          - { name: bandD, label: Bottom stripe 2, type: string, pattern: '^#[0-9A-Fa-f]{6}$' }
+
+      - name: settings
+        label: Page settings
+        type: object
+        fields:
+          - { name: showStory, label: Show the founder story, type: boolean }
+          - name: motion
+            label: Animation speed
+            type: select
+            options:
+              values: [calm, lively, still]
+
+      - name: seo
+        label: Search & sharing
+        type: object
+        fields:
+          - { name: title, label: Browser tab / Google title, type: string }
+          - { name: description, label: Google / social description, type: text }
+
+      - name: skipLabel
+        label: '"Skip to sign up" link (accessibility)'
+        type: string
+
+      - name: tracking
+        label: 'Tracking & integrations (ask a developer before changing)'
+        type: object
+        fields:
+          - { name: ga4MeasurementId, label: Google Analytics 4 Measurement ID (G-...), type: string }
+          - { name: customerIoWritePublicKey, label: Customer.io public write key (pk_...), type: string }
+          - { name: customerIoRegion, label: Customer.io data center, type: select, options: { values: [us, eu] } }
+          - { name: consentCountries, label: Countries that see the cookie banner (2-letter codes), type: string, list: true }
+          - { name: consentUsStates, label: US states that see the cookie banner (2-letter codes), type: string, list: true }

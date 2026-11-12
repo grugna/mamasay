@@ -1,0 +1,270 @@
+{
+  "footer": {
+    "pauseLabel": "Pause animations",
+    "playLabel": "Play animations",
+    "copyright": "© 2026 mamasays",
+    "contactEmail": "emily@mamasaystoday.com"
+  },
+  "hero": {
+    "photo": {
+      "image": "/images/hero.jpg",
+      "alt": "A mother holding her newborn while her toddler reaches up to touch her shoulder"
+    },
+    "badge": "Now inviting moms to the beta",
+    "headline1": "motherhood,",
+    "headline2": "on our terms.",
+    "lead": "For the moms who are holding it all together: it's time to capture the joy. And take some damn credit.",
+    "sub": "A few minutes, morning and night, to come back to yourself.",
+    "emailPlaceholder": "Your email",
+    "button": "Start for free",
+    "perks": [
+      "Free",
+      "Morning and night",
+      "We'll only email you about mamasays"
+    ]
+  },
+  "story": {
+    "photo": {
+      "image": "/images/story-newborn-foot.jpg",
+      "alt": "A mother's hands cradling her newborn's tiny foot"
+    },
+    "paragraphs": [
+      "With a toddler, a newborn, and a demanding job to head back to, I was running on empty. The highs were high (first giggles, toddler hugs) and the lows were low (exhaustion, tantrums, the mental load).",
+      "I realized I needed to start paying better attention, both to what was draining me and to the moments that make this hectic season one I'll want to replay years from now.",
+      "So during a late-night feed, to switch things up from aimlessly scrolling, I started writing two small check-ins. One for the morning, to start the day with intention. And one for the end of a very full day: to capture the sweet, get honest about what I could let go of and to acknowledge that parts of this are simply just hard.",
+      "Lately I've had so many questions for my own mom. Some are about me: my first word, when I took my first steps. But I'm even more curious about her. How did she raise four kids without her parents nearby? What were she and my dad like right after we came along? Her answer is always the same: it was all a blur.",
+      "I want more than a blur for my girls. These little check-ins have helped me be more present and slowly come back to myself, and they keep my story right alongside theirs: their milestones, and mine as I become their mom. I wish my mom had this for me. I'm making it for my girls, and I hope it helps you, too."
+    ],
+    "signature": "— Emily, founder of mamasays and mom of two",
+    "eyebrow": "Why I needed this",
+    "title": "Built with a baby in my arms."
+  },
+  "memories": {
+    "items": [
+      {
+        "date": "Wed, Oct 14",
+        "text": "she painted me a picture",
+        "photo": {
+          "image": "/images/memory-painting.jpg",
+          "alt": "A toddler in a white tee painting a big pink and red picture on an easel"
+        }
+      },
+      {
+        "date": "Sat, Oct 3",
+        "text": "I ran a 5K"
+      },
+      {
+        "date": "Fri, Sep 25",
+        "text": "she called the moon a night banana"
+      },
+      {
+        "date": "Tue, Sep 8",
+        "text": "I got the new job"
+      },
+      {
+        "date": "Tue, Aug 18",
+        "text": "first day of school"
+      }
+    ],
+    "eyebrow": "Capture core memories",
+    "title": "Keep the little things you never want to forget.",
+    "body": "Save a moment the second it happens: a first laugh, a small win, a quiet minute that was yours. **mamasays** keeps them all in one place, so the good parts of this season don't blur away."
+  },
+  "firsts": {
+    "pairs": [
+      {
+        "hers": "first word: “mama”",
+        "yours": "first full night of sleep in four months"
+      },
+      {
+        "hers": "first day of daycare",
+        "yours": "first day back at work (cried at drop-off)"
+      },
+      {
+        "hers": "first steps",
+        "yours": "first time I asked for help and meant it"
+      }
+    ],
+    "eyebrow": "Your firsts, too",
+    "titleA": "Their milestones.",
+    "titleB": "And yours.",
+    "body1": "You'll never forget their first steps. But what about yours: the first night you got them both down, the first week back at work, the day you finally asked for help?",
+    "body2": "We have so many questions for our own moms. How did she do it? What was it really like? Most of us get the same answer: *it was all a blur.* **mamasays** keeps your story alongside theirs, a quick note and a photo at a time, so someday, when they ask how you did it, you'll have more to give them than a blur.",
+    "cta": "Start your story"
+  },
+  "name": {
+    "said": [
+      "mama says, put your shoes on.",
+      "mama says, I love you.",
+      "mama says, the baby's crying.",
+      "mama says, I gotta work."
+    ],
+    "say": [
+      "I got this.",
+      "we can do hard things.",
+      "I'm carrying a lot.",
+      "it's okay to slow down."
+    ],
+    "eyebrow": "The voice in your corner",
+    "body1": "My two-year-old kept repeating it: “mama says.” It rang in my head until it stuck, and slowly it became the voice I needed to hear.",
+    "body2": "Part having your own mom in your corner, part learning to mother yourself. The voice that’s got your back, so you can do this on your own terms and show up as your best self for them.",
+    "saidLabel": "What she said",
+    "sayLabel": "WHAT I SAY",
+    "closing1": "Your life, your terms.",
+    "closing2": "Mama said so."
+  },
+  "blur": {
+    "moments": [
+      "her first laugh",
+      "“I love you, mama”",
+      "crawling into bed to snuggle",
+      "getting the promotion",
+      "a mom friend replying “same”",
+      "a handmade card",
+      "a lost tooth",
+      "couch cuddles",
+      "catching the sunrise",
+      "sticky fingers",
+      "a scored goal"
+    ],
+    "title": "There's beauty in the blur.",
+    "body1": "People will tell us this season is a blur. And it is, which makes it easy to miss the moments that make it all worthwhile.",
+    "body2": "There's no denying it: moms today carry the weight of the world on our shoulders and there's a lot working against us. **mamasays** is a way to keep coming back to ourselves, to control what we can, and to __start giving ourselves some damn credit.__"
+  },
+  "nav": {
+    "how": "How it works",
+    "memories": "Core memories",
+    "firsts": "Your firsts",
+    "story": "My story"
+  },
+  "today": {
+    "title": "Today",
+    "morningLabel": "Morning · setting down",
+    "morningText": "a perfectly clean house",
+    "eveningLabel": "Evening · I deserve some damn credit for",
+    "eveningText": "keeping my cool",
+    "memoryLabel": "Core memory",
+    "memoryText": "she called the moon a night banana"
+  },
+  "how": {
+    "eyebrow": "How it works",
+    "title": "Start and end the day with you.",
+    "steps": [
+      {
+        "title": "Reflect on your season",
+        "text": "Start with a five-minute reflection on where you are right now and what you're going for, so every check-in after it is about your life, not a generic one."
+      },
+      {
+        "title": "A few minutes, morning and night",
+        "text": "In the morning, check what’s in your tank, choose where your best energy goes, and decide what you can set down. In the evening, reflect on how the day went and, if you want, name something you’re grateful for."
+      },
+      {
+        "title": "See yourself more clearly",
+        "text": "Your check-ins add up to a picture of you that grows over time: what fills you, what drains you, and what's shifting as your seasons change."
+      }
+    ]
+  },
+  "night": {
+    "eyebrow": "Middle-of-the-night check-ins",
+    "title": "For the 2 a.m. feeds, too.",
+    "body": "Some of the realest moments of this season happen when the house is dark and quiet and it's just you and a little one. **mamasays** is there then too: a quick check-in you can tap through one-handed, to name what you're carrying, catch a tiny moment, and give yourself a little grace until morning."
+  },
+  "join": {
+    "title": "Be one of the first.",
+    "intro": "We're inviting a small group of moms to try mamasays and tell us what's true for them.",
+    "perks": [
+      "Your check-ins stay yours.",
+      "A free practice.",
+      "Help shape what it becomes."
+    ],
+    "nameLabel": "First name (optional)",
+    "emailLabel": "Email",
+    "emailPlaceholder": "you@example.com",
+    "button": "Start for free"
+  },
+  "privacy": {
+    "title": "Privacy",
+    "paragraphs": [
+      "When you sign up, we collect your email address. When you use mamasays, we store the check-ins, reflections, and memories you choose to save. We use this to run the app, send you updates about the beta, and make mamasays better.",
+      "We never sell your information. Your entries are private to you. When we share what we're learning about modern motherhood, it's only ever aggregated and anonymized, so nothing can be traced back to you.",
+      "You can unsubscribe from emails anytime, and you can ask us to delete your account and data by writing to [info@mamasaystoday.com](mailto:info@mamasaystoday.com)."
+    ]
+  },
+  "terms": {
+    "title": "Terms of use",
+    "paragraphs": [
+      "mamasays is in beta, so features will change and things may occasionally break. Thank you for your patience and your feedback, which we may use to improve the product.",
+      "mamasays is a reflection practice, not medical or mental health care. If you're struggling, please reach out to your doctor or a qualified professional.",
+      "You must be 18 or older to use mamasays. What you write is yours. Please use mamasays for your own personal use. We may update these terms as we grow, and we'll let you know when we do."
+    ]
+  },
+  "settings": {
+    "showStory": true,
+    "motion": "calm"
+  },
+  "palette": {
+    "highlight": "#E1BED4",
+    "bandA": "#8A8350",
+    "bandB": "#8DA4BD",
+    "bandC": "#4E2B22",
+    "bandD": "#E1BED4"
+  },
+  "seo": {
+    "title": "mamasays — a daily check-in and memory catcher for busy moms",
+    "description": "mamasays is a daily check-in and memory catcher for busy moms: a few minutes, morning and night, to come back to yourself and capture the joy."
+  },
+  "skipLabel": "Skip to sign up",
+  "signup": {
+    "successMessage": "You're on the list. Check your inbox: we'll be in touch soon.",
+    "errorMessage": "Something went wrong. Please try again in a moment."
+  },
+  "consent": {
+    "title": "Your privacy choices",
+    "text": "We use cookies and similar tools to understand how people use this site and to improve it. You can accept or decline; signing up works either way.",
+    "accept": "Accept",
+    "decline": "Decline",
+    "manageLabel": "Cookie preferences"
+  },
+  "tracking": {
+    "ga4MeasurementId": "G-XXXXXXXXXX",
+    "customerIoWritePublicKey": "pk_XXXXXXXXXXXXXXXX",
+    "customerIoRegion": "us",
+    "consentCountries": [
+      "AT",
+      "BE",
+      "BG",
+      "HR",
+      "CY",
+      "CZ",
+      "DK",
+      "EE",
+      "FI",
+      "FR",
+      "DE",
+      "GR",
+      "HU",
+      "IE",
+      "IT",
+      "LV",
+      "LT",
+      "LU",
+      "MT",
+      "NL",
+      "PL",
+      "PT",
+      "RO",
+      "SK",
+      "SI",
+      "ES",
+      "SE",
+      "IS",
+      "LI",
+      "NO",
+      "GB",
+      "CH"
+    ],
+    "consentUsStates": [
+      "CA"
+    ]
+  }
+}
