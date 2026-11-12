@@ -171,6 +171,31 @@ const t = c.tracking;
 </section>
 </>)}
 
+
+
+<section id="firsts" aria-labelledby="firsts-title" style="background: #E6ECF2">
+<div style="max-width: 1200px; margin: 0 auto; padding: 104px 24px; position: relative">
+<svg aria-hidden="true" viewBox="0 0 24 24" width="34" height="34" style="position: absolute; right: 4%; top: 72px; transform: rotate(10deg); opacity: .55; pointer-events: none; overflow: visible"><path d="M9.13 11.25L5.62 7.09Q4.64 5.60 6.25 6.37L11.08 9.18L13.05 4.04Q13.83 2.44 13.97 4.22L13.83 9.66L19.50 8.34Q21.29 8.12 19.88 9.24L14.95 12.33L17.57 16.23Q18.62 17.55 17.13 16.75L12.82 14.85L12.25 18.04Q11.82 19.63 11.47 18.02L10.60 14.61L6.28 14.31Q4.63 14.43 6.03 13.55L9.13 11.25Z" fill="#E1BED4" stroke="#E1BED4" stroke-width="1.6" stroke-linejoin="round"></path></svg><svg aria-hidden="true" viewBox="0 0 24 24" width="20" height="20" style="position: absolute; left: 2%; bottom: 64px; transform: rotate(-8deg); opacity: .55; pointer-events: none; overflow: visible"><path d="M13.81 9.43L20.31 7.25Q22.12 6.83 20.72 8.06L15.14 12.20L16.80 16.98Q17.64 18.43 16.31 17.41L12.65 15.08L11.44 20.37Q10.86 22.05 10.67 20.28L10.10 14.51L3.52 14.11Q1.70 13.92 3.33 13.09L8.97 11.16L7.25 8.02Q6.29 6.71 7.67 7.57L11.10 8.99L12.16 4.19Q12.75 2.53 13.07 4.26L13.81 9.43Z" fill="#8A8350" stroke="#8A8350" stroke-width="1.6" stroke-linejoin="round"></path></svg>
+<div style="display: flex; flex-wrap: wrap; gap: 32px 80px; align-items: flex-start">
+<div style="flex: 1 1 340px; min-width: 0">
+<p style="margin: 0 0 16px; font-size: 13px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: #4E2B22">{c.firsts.eyebrow}</p>
+<h2 id="firsts-title" style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 700; letter-spacing: -0.015em; font-size: clamp(34px, 4.5vw, 54px); line-height: 1.1; color: #1A1714">{c.firsts.titleA} <span style="font-style: italic; font-weight: 600">{c.firsts.titleB}</span></h2>
+</div>
+<div style="flex: 1.4 1 440px; min-width: 0; display: flex; flex-direction: column; gap: 16px; font-size: 19px; color: #5A4A42">
+<p style="margin: 0" set:html={inline(c.firsts.body1)} data-tina-field={tf(c.firsts, 'body1')}></p>
+<p style="margin: 0" set:html={inline(c.firsts.body2)} data-tina-field={tf(c.firsts, 'body2')}></p>
+</div>
+</div>
+<ol aria-label="Examples of their firsts beside yours" style="margin: 64px 0 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 18px">
+{c.firsts.pairs.map((it) => (<li style="display: flex; flex-wrap: wrap; gap: 12px 20px">
+<div style="flex: 1 1 300px; min-width: 0; box-sizing: border-box; background: #FFFCF7; border: 1px solid #CCD6E1; border-radius: 6px; padding: 18px 22px; display: flex; gap: 14px; align-items: flex-start; box-shadow: 0 10px 28px rgba(78, 43, 34, 0.06)"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#435B74" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" style="flex: 0 0 auto; margin-top: 3px"><path d="M12 3l1.8 4.6L18.5 9l-4.7 1.6L12 15l-1.8-4.4L5.5 9l4.7-1.4z"></path></svg><div style="min-width: 0"><p style="margin: 0 0 4px; font-size: 12px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #5A4A42">Hers</p><p style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-style: italic; font-weight: 600; font-size: 24px; line-height: 1.2; color: #1A1714" data-tina-field={tf(it, 'hers')}>{it.hers}</p></div></div>
+<div style="flex: 1 1 300px; min-width: 0; box-sizing: border-box; background: #F5E9F0; border: 1px solid #E1BED4; border-radius: 6px; padding: 18px 22px; display: flex; gap: 14px; align-items: flex-start; box-shadow: 0 10px 28px rgba(78, 43, 34, 0.06)"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#8A8350" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" style="flex: 0 0 auto; margin-top: 3px"><path d="M12 3l1.8 4.6L18.5 9l-4.7 1.6L12 15l-1.8-4.4L5.5 9l4.7-1.4z"></path><path d="M18.5 15.5l.8 2 2 .7-2 .8-.8 2-.7-2-2-.8 2-.7z"></path></svg><div style="min-width: 0"><p style="margin: 0 0 4px; font-size: 12px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #5A4A42">Yours</p><p style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-style: italic; font-weight: 600; font-size: 24px; line-height: 1.2; color: #1A1714" data-tina-field={tf(it, 'yours')}>{it.yours}</p></div></div>
+</li>))}
+</ol>
+<p style="margin: 48px 0 0"><a href="#join" style="display: inline-flex; align-items: center; gap: 10px; min-height: 52px; box-sizing: border-box; padding: 0 28px; border-radius: 999px; background: #4E2B22; color: #FBF5EC; text-decoration: none; font-family: Figtree, sans-serif; font-size: 14px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase">{c.firsts.cta}<svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FBF5EC" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="M13 6l6 6-6 6"></path></svg></a></p>
+</div>
+</section>
+
 <section id="blur">
 <div>
 <div>
@@ -245,29 +270,6 @@ const t = c.tracking;
 </div>
 </div>
 </div>
-</div>
-</section>
-
-<section id="firsts" aria-labelledby="firsts-title" style="background: #E6ECF2">
-<div style="max-width: 1200px; margin: 0 auto; padding: 104px 24px; position: relative">
-<svg aria-hidden="true" viewBox="0 0 24 24" width="34" height="34" style="position: absolute; right: 4%; top: 72px; transform: rotate(10deg); opacity: .55; pointer-events: none; overflow: visible"><path d="M9.13 11.25L5.62 7.09Q4.64 5.60 6.25 6.37L11.08 9.18L13.05 4.04Q13.83 2.44 13.97 4.22L13.83 9.66L19.50 8.34Q21.29 8.12 19.88 9.24L14.95 12.33L17.57 16.23Q18.62 17.55 17.13 16.75L12.82 14.85L12.25 18.04Q11.82 19.63 11.47 18.02L10.60 14.61L6.28 14.31Q4.63 14.43 6.03 13.55L9.13 11.25Z" fill="#E1BED4" stroke="#E1BED4" stroke-width="1.6" stroke-linejoin="round"></path></svg><svg aria-hidden="true" viewBox="0 0 24 24" width="20" height="20" style="position: absolute; left: 2%; bottom: 64px; transform: rotate(-8deg); opacity: .55; pointer-events: none; overflow: visible"><path d="M13.81 9.43L20.31 7.25Q22.12 6.83 20.72 8.06L15.14 12.20L16.80 16.98Q17.64 18.43 16.31 17.41L12.65 15.08L11.44 20.37Q10.86 22.05 10.67 20.28L10.10 14.51L3.52 14.11Q1.70 13.92 3.33 13.09L8.97 11.16L7.25 8.02Q6.29 6.71 7.67 7.57L11.10 8.99L12.16 4.19Q12.75 2.53 13.07 4.26L13.81 9.43Z" fill="#8A8350" stroke="#8A8350" stroke-width="1.6" stroke-linejoin="round"></path></svg>
-<div style="display: flex; flex-wrap: wrap; gap: 32px 80px; align-items: flex-start">
-<div style="flex: 1 1 340px; min-width: 0">
-<p style="margin: 0 0 16px; font-size: 13px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: #4E2B22">{c.firsts.eyebrow}</p>
-<h2 id="firsts-title" style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 700; letter-spacing: -0.015em; font-size: clamp(34px, 4.5vw, 54px); line-height: 1.1; color: #1A1714">{c.firsts.titleA} <span style="font-style: italic; font-weight: 600">{c.firsts.titleB}</span></h2>
-</div>
-<div style="flex: 1.4 1 440px; min-width: 0; display: flex; flex-direction: column; gap: 16px; font-size: 19px; color: #5A4A42">
-<p style="margin: 0" set:html={inline(c.firsts.body1)} data-tina-field={tf(c.firsts, 'body1')}></p>
-<p style="margin: 0" set:html={inline(c.firsts.body2)} data-tina-field={tf(c.firsts, 'body2')}></p>
-</div>
-</div>
-<ol aria-label="Examples of their firsts beside yours" style="margin: 64px 0 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 18px">
-{c.firsts.pairs.map((it) => (<li style="display: flex; flex-wrap: wrap; gap: 12px 20px">
-<div style="flex: 1 1 300px; min-width: 0; box-sizing: border-box; background: #FFFCF7; border: 1px solid #CCD6E1; border-radius: 6px; padding: 18px 22px; display: flex; gap: 14px; align-items: flex-start; box-shadow: 0 10px 28px rgba(78, 43, 34, 0.06)"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#435B74" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" style="flex: 0 0 auto; margin-top: 3px"><path d="M12 3l1.8 4.6L18.5 9l-4.7 1.6L12 15l-1.8-4.4L5.5 9l4.7-1.4z"></path></svg><div style="min-width: 0"><p style="margin: 0 0 4px; font-size: 12px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #5A4A42">Hers</p><p style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-style: italic; font-weight: 600; font-size: 24px; line-height: 1.2; color: #1A1714" data-tina-field={tf(it, 'hers')}>{it.hers}</p></div></div>
-<div style="flex: 1 1 300px; min-width: 0; box-sizing: border-box; background: #F5E9F0; border: 1px solid #E1BED4; border-radius: 6px; padding: 18px 22px; display: flex; gap: 14px; align-items: flex-start; box-shadow: 0 10px 28px rgba(78, 43, 34, 0.06)"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#8A8350" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" style="flex: 0 0 auto; margin-top: 3px"><path d="M12 3l1.8 4.6L18.5 9l-4.7 1.6L12 15l-1.8-4.4L5.5 9l4.7-1.4z"></path><path d="M18.5 15.5l.8 2 2 .7-2 .8-.8 2-.7-2-2-.8 2-.7z"></path></svg><div style="min-width: 0"><p style="margin: 0 0 4px; font-size: 12px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #5A4A42">Yours</p><p style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-style: italic; font-weight: 600; font-size: 24px; line-height: 1.2; color: #1A1714" data-tina-field={tf(it, 'yours')}>{it.yours}</p></div></div>
-</li>))}
-</ol>
-<p style="margin: 48px 0 0"><a href="#join" style="display: inline-flex; align-items: center; gap: 10px; min-height: 52px; box-sizing: border-box; padding: 0 28px; border-radius: 999px; background: #4E2B22; color: #FBF5EC; text-decoration: none; font-family: Figtree, sans-serif; font-size: 14px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase">{c.firsts.cta}<svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FBF5EC" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="M13 6l6 6-6 6"></path></svg></a></p>
 </div>
 </section>
 
