@@ -1,0 +1,6 @@
+# Cloudflare Pages settings for the *editor* deployment (TinaCMS admin + visual preview).
+# The public site is served from GitHub Pages and does not use this file.
+name = "mamasay-editor"
+pages_build_output_dir = "dist"
+compatibility_date = "2025-01-01"
+compatibility_flags = ["nodejs_compat"]

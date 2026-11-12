@@ -6,9 +6,23 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
-    "preview": "astro preview"
+    "preview": "astro preview",
+    "dev:editor": "TINA_EDITOR=true tinacms dev -c \"astro dev\"",
+    "build:editor": "TINA_EDITOR=true tinacms build && TINA_EDITOR=true astro build",
+    "build:editor:local": "TINA_EDITOR=true tinacms build --local --skip-cloud-checks && TINA_EDITOR=true astro build"
   },
   "dependencies": {
-    "astro": "^5.18.2"
+    "@astrojs/cloudflare": "^12.6.13",
+    "@tinacms/astro": "^0.8.0",
+    "astro": "^5.18.2",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "tinacms": "^3.15.2"
+  },
+  "devDependencies": {
+    "@tinacms/cli": "^4.0.5"
+  },
+  "engines": {
+    "node": ">=22"
   }
 }
