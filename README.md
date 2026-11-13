@@ -49,7 +49,8 @@ Bigger **design changes** (layout, new sections) are done in a Claude artifact a
    - Build command: `npm run build:editor`
    - Build output directory: `dist`
    - Environment variables: `TINA_CLIENT_ID`, `TINA_TOKEN` (from step 1), `NODE_VERSION` = `22`
-   - `wrangler.toml` already enables the `nodejs_compat` flag Tina needs.
+   - After the first deploy: *Settings > Functions > Compatibility flags*: add `nodejs_compat` for Production and Preview, then redeploy.
+   - `wrangler.toml` intentionally has no `pages_build_output_dir`; with it, Cloudflare ignores the dashboard variables.
 3. Open `https://<project>.pages.dev/admin`, sign in, and edit.
 
 For local work: copy `.env.example` to `.env`, then `npm run dev:editor` (admin at http://localhost:4321/admin/).

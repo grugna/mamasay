@@ -1,6 +1,11 @@
-# Cloudflare Pages settings for the *editor* deployment (TinaCMS admin + visual preview).
-# The public site is served from GitHub Pages and does not use this file.
+# Cloudflare Pages (editor deployment: TinaCMS admin + visual preview). The public site is on GitHub Pages.
+#
+# Deliberately NOT a Pages config (no `pages_build_output_dir`): when that key is present Cloudflare makes
+# this file the source of truth and the dashboard's environment variables stop applying, which broke the
+# Tina build (TINA_CLIENT_ID / TINA_TOKEN missing). Settings live in the Cloudflare dashboard instead:
+#   Build command: npm run build:editor   Output directory: dist
+#   Variables:     TINA_CLIENT_ID, TINA_TOKEN, NODE_VERSION=22
+#   Compatibility flag: nodejs_compat (Settings > Functions), Production and Preview
 name = "mamasay-editor"
-pages_build_output_dir = "dist"
 compatibility_date = "2025-01-01"
 compatibility_flags = ["nodejs_compat"]
