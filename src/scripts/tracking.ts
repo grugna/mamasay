@@ -60,13 +60,16 @@ export function trackEvent(name: string, params: Record<string, unknown> = {}) {
 // wait for cookie consent. No Customer.io cookies or scripts are loaded.
 const CIO_HOST = CIO_REGION === 'eu' ? 'https://cdp-eu.customer.io' : 'https://cdp.customer.io';
 
-async function cio(path: 'identify' | 'track', payload: Record<string, unknown>) {
-  const res = await fetch(`${CIO_HOST}/v1/${path}`, {
+// Same wire format as Customer.io's own browser SDK: POST /v1/b, Content-Type text/plain (a CORS "simple
+// request", so no preflight, which this API does not answer), write key inside the body.
+async function cioBatch(events: Record<string, unknown>[]) {
+  const res = await fetch(`${CIO_HOST}/v1/b`, {
     method: 'POST',
-    headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${CIO_KEY}` },
-    body: JSON.stringify(payload),
+    headers: { 'Content-Type': 'text/plain' },
+    keepalive: true,
+    body: JSON.stringify({ batch: events.map((e) => ({ ...e, writeKey: CIO_KEY })), writeKey: CIO_KEY }),
   });
-  if (!res.ok) throw new Error(`Customer.io ${path} failed: ${res.status}`);
+  if (!res.ok) throw new Error(`Customer.io failed: ${res.status}`);
 }
 
 export async function registerSignup(email: string, firstName: string, source: string) {
@@ -79,10 +82,8 @@ export async function registerSignup(email: string, firstName: string, source: s
   }
   const traits: Record<string, unknown> = { email, signup_source: 'landing_page', signup_form: source };
   if (firstName) traits.first_name = firstName;
-  await cio('identify', { userId: email, traits });
-  await cio('track', {
-    userId: email,
-    event: 'waitlist_signup',
-    properties: { form: source, page: location.pathname },
-  });
+  await cioBatch([
+    { type: 'identify', userId: email, traits },
+    { type: 'track', userId: email, event: 'waitlist_signup', properties: { form: source, page: location.pathname } },
+  ]);
 }
