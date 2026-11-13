@@ -88,7 +88,7 @@ Domain: `mamasaystoday.com` (registrar/DNS: GoDaddy). Email on the domain is Mic
 - Source: **Data & Integrations > Integrations > JavaScript** source in the *Mamasays* workspace (US data center).
 - The **public** write key (`pk_us_...`) is stored in `src/content/site.json` > `tracking.customerIoWritePublicKey`, region in `customerIoRegion`.
   Public keys are designed to be exposed in the page. Never commit an `sk_` key or a Track API key.
-- The form posts straight to `https://cdp.customer.io/v1/identify` and `/v1/track` (see `src/scripts/tracking.ts`); the official
+- The form posts one batch (identify + track) to `https://cdp.customer.io/v1/b` as `text/plain` with the key in the body, the same format as Customer.io's own SDK (the API doesn't answer CORS preflights, so JSON + an Authorization header fails in browsers; see `src/scripts/tracking.ts`); the official
   Customer.io snippet is intentionally not used (it would set cookies and need consent handling).
 - The source's *Complete setup* button in Customer.io stays disabled until it has received data: submit a test sign-up (or send an identify call), then click *Test connection*.
 - Build the welcome campaign on the `waitlist_signup` event. Delete test people (e.g. `claude-setup-test@example.com`) when done.
