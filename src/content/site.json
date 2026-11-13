@@ -187,6 +187,7 @@
     "paragraphs": [
       "When you sign up, we collect your email address. When you use mamasays, we store the check-ins, reflections, and memories you choose to save. We use this to run the app, send you updates about the beta, and make mamasays better.",
       "We never sell your information. Your entries are private to you. When we share what we're learning about modern motherhood, it's only ever aggregated and anonymized, so nothing can be traced back to you.",
+      "To decide whether to show the cookie notice, we look up your approximate region (country, and state in the US) from your IP address using a third-party service, ipwho.is. We don't store this, and it isn't linked to your sign-up. Where required, analytics only runs if you accept.",
       "You can unsubscribe from emails anytime, and you can ask us to delete your account and data by writing to [info@mamasaystoday.com](mailto:info@mamasaystoday.com)."
     ]
   },
