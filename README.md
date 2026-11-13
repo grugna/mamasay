@@ -1,6 +1,7 @@
 # mamasays landing page
 
-Static landing page (Astro) hosted on GitHub Pages: https://grugna.github.io/mamasay/
+Static landing page (Astro) hosted on GitHub Pages at https://mamasaystoday.com (custom domain; see
+[Domain setup](#domain-setup-godaddy--github-pages)).
 
 ## Editing content (no code)
 
@@ -57,6 +58,47 @@ Without Tina Cloud credentials it runs in local mode and edits `site.json` on di
 > Status: the editor build and local editing are tested. The Cloudflare deployment itself needs a first-run check once the
 > Tina Cloud / Cloudflare accounts exist (worker runtime, Tina Cloud auth).
 
+## Initial setup record (what was configured and where)
+
+### Domain setup (GoDaddy + GitHub Pages)
+
+Domain: `mamasaystoday.com` (registrar/DNS: GoDaddy). Email on the domain is Microsoft 365, so **never delete the MX/TXT records**.
+
+1. **Repo variables** (GitHub > Settings > Secrets and variables > Actions > Variables):
+   `SITE_URL=https://mamasaystoday.com`, `BASE_PATH=/`. With a custom domain the site is served from the root, so the base path must be `/`.
+2. **GitHub Pages** (Settings > Pages): source = *GitHub Actions*, custom domain = `mamasaystoday.com`, then tick *Enforce HTTPS* once the certificate is issued.
+3. **GoDaddy DNS** (My Products > domain > DNS):
+
+   | Type | Name | Value |
+   |---|---|---|
+   | A | `@` | `185.199.108.153` |
+   | A | `@` | `185.199.109.153` |
+   | A | `@` | `185.199.110.153` |
+   | A | `@` | `185.199.111.153` |
+   | CNAME | `www` | `grugna.github.io` |
+
+   (GoDaddy's default "parked" A records must be removed. Current GitHub Pages IPs:
+   https://docs.github.com/pages/configuring-a-custom-domain-for-your-github-pages-site)
+4. DNS can take minutes to a few hours. Check with `dig +short mamasaystoday.com`.
+5. Afterwards: update the GA4 data stream URL and (once the editor exists) add the domain to Tina Cloud's Site URLs.
+   An editor subdomain such as `edit.mamasaystoday.com` can later be a CNAME to the Cloudflare Pages project.
+
+### Customer.io (sign-ups)
+
+- Source: **Data & Integrations > Integrations > JavaScript** source in the *Mamasays* workspace (US data center).
+- The **public** write key (`pk_us_...`) is stored in `src/content/site.json` > `tracking.customerIoWritePublicKey`, region in `customerIoRegion`.
+  Public keys are designed to be exposed in the page. Never commit an `sk_` key or a Track API key.
+- The form posts straight to `https://cdp.customer.io/v1/identify` and `/v1/track` (see `src/scripts/tracking.ts`); the official
+  Customer.io snippet is intentionally not used (it would set cookies and need consent handling).
+- The source's *Complete setup* button in Customer.io stays disabled until it has received data: submit a test sign-up (or send an identify call), then click *Test connection*.
+- Build the welcome campaign on the `waitlist_signup` event. Delete test people (e.g. `claude-setup-test@example.com`) when done.
+
+### Google Analytics 4
+
+- Property/web data stream in https://analytics.google.com; the Measurement ID (`G-...`, public) is `tracking.ga4MeasurementId` in `site.json`.
+- Verify in *Reports > Realtime* (accept the cookie banner first if testing from the EU/California). Mark `sign_up` as a key event under *Admin > Events*.
+- Update the data stream URL to `https://mamasaystoday.com`.
+
 ## Design changes from Claude artifacts
 
 Layout and design iterations happen in a Claude artifact, not in the CMS.
@@ -100,7 +142,7 @@ How a change travels: **editor saves in TinaCMS → commit to GitHub → GitHub 
 | **TinaCMS** | Visual editor: shows the live page beside a form, click any element to edit it, saves as a Git commit via Tina Cloud (free plan: 2 users). Its schema (which fields exist) is `tina/config.ts`; `src/lib/content.ts` + `data-tina-field` attributes in `index.astro` make elements clickable. Only used in the editor build. | `tina/config.ts`; env `TINA_CLIENT_ID`, `TINA_TOKEN` | https://tina.io/docs and https://tina.io/docs/frameworks/astro |
 | **Cloudflare Pages** | Hosts the *editor build* only (needs a server route for live preview). Free tier: 500 builds/month. | `wrangler.toml`; project settings in the Cloudflare dashboard | https://developers.cloudflare.com/pages |
 | **React** | Dependency of TinaCMS's admin UI only; the website itself ships no React. | n/a | https://react.dev |
-| **GitHub Pages** | Free static hosting at `grugna.github.io/mamasay`. Source is set to "GitHub Actions". | Repo **Settings > Pages**; custom domain goes here too | https://docs.github.com/pages |
+| **GitHub Pages** | Free static hosting at `mamasaystoday.com` (fallback `grugna.github.io/mamasay`). Source is set to "GitHub Actions". | Repo **Settings > Pages**; custom domain goes here too | https://docs.github.com/pages |
 | **GitHub Actions** | On every push to `main`: `npm ci`, `npm run build`, publish `dist/`. | `.github/workflows/deploy.yml`; optional repo variables `SITE_URL`, `BASE_PATH` | https://docs.github.com/actions |
 | **Customer.io** (Data Pipelines API) | Receives sign-ups from the form (`identify` + `waitlist_signup` event) via a public `pk_` key. | `tracking` block in `site.json`; code in `src/scripts/tracking.ts` | https://docs.customer.io/integrations/api/cdp/ |
 | **Google Analytics 4** | Page and `sign_up` analytics, loaded via `gtag.js` (consent-gated in EU/UK/CH/California). | `tracking.ga4MeasurementId`; code in `src/scripts/tracking.ts` | https://support.google.com/analytics |
