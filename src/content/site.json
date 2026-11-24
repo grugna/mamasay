@@ -180,20 +180,6 @@
     "successMessage": "You're on the list. Check your inbox: we'll be in touch soon.",
     "errorMessage": "Something went wrong. Please try again in a moment."
   },
-  "privacy": {
-    "title": "Privacy",
-    "paragraphs": [
-      "When you sign up, we collect your email address. When you use mamasays, we store the check-ins, reflections, and memories you choose to save. We use this to run the app, send you updates about the beta, and make mamasays better. When we share what we're learning about modern motherhood, it's only ever aggregated and anonymized, so nothing can be traced back to you. You can unsubscribe from emails anytime, and you can ask us to delete your account and data by writing to [info@mamasaystoday.com](mailto:info@mamasaystoday.com)."
-    ]
-  },
-  "terms": {
-    "title": "Terms of use",
-    "paragraphs": [
-      "mamasays is in beta, so features will change and things may occasionally break. Thank you for your patience and your feedback, which we may use to improve the product.",
-      "mamasays is a reflection practice, not medical or mental health care. If you're struggling, please reach out to your doctor or a qualified professional.",
-      "You must be 18 or older to use mamasays. What you write is yours. Please use mamasays for your own personal use. We may update these terms as we grow, and we'll let you know when we do."
-    ]
-  },
   "footer": {
     "copyright": "© 2026 mamasays",
     "contactEmail": "emily@mamasaystoday.com",

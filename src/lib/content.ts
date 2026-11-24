@@ -18,3 +18,14 @@ export async function getSite(): Promise<{ data: Site; tf: TinaFieldFn }> {
   const res = await requestWithMetadata(client.queries.site({ relativePath: 'site.json' }));
   return { data: (res as any).data.site as Site, tf: tinaField as TinaFieldFn };
 }
+
+// data-* attributes the browser scripts (consent, analytics, Customer.io) read from <body>.
+export function trackingAttrs(t: Site['tracking']) {
+  return {
+    'data-ga-id': t.ga4MeasurementId,
+    'data-cio-key': t.customerIoWritePublicKey,
+    'data-cio-region': t.customerIoRegion,
+    'data-consent-countries': JSON.stringify(t.consentCountries),
+    'data-consent-states': JSON.stringify(t.consentUsStates),
+  };
+}

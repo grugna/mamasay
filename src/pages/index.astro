@@ -1,6 +1,7 @@
 ---
 import '../styles/global.css';
-import { getSite } from '../lib/content';
+import { getSite, trackingAttrs } from '../lib/content';
+import ConsentBanner from '../components/ConsentBanner.astro';
 import pillLayout from '../lib/pill-layout.json';
 import { inline, signature } from '../lib/inline';
 
@@ -25,11 +26,7 @@ const t = c.tracking;
 <link rel="stylesheet" href={asset('fonts/fonts.css')} />
 </head>
 <body
-  data-ga-id={t.ga4MeasurementId}
-  data-cio-key={t.customerIoWritePublicKey}
-  data-cio-region={t.customerIoRegion}
-  data-consent-countries={JSON.stringify(t.consentCountries)}
-  data-consent-states={JSON.stringify(t.consentUsStates)}
+  {...trackingAttrs(t)}
   data-success={c.signup.successMessage}
   data-error={c.signup.errorMessage}
 >
@@ -328,7 +325,7 @@ const t = c.tracking;
 <label for="join-email" style="font-size: 13px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase" data-tina-field={tf(c.join, 'emailLabel')}>{c.join.emailLabel}</label>
 <input id="join-email" type="email" name="email" autocomplete="email" required="" placeholder={c.join.emailPlaceholder} style="min-height: 52px; box-sizing: border-box; padding: 0 20px; border: 1px solid #8C7A6E; border-radius: 6px; background: #FBF5EC; font-family: Figtree, sans-serif; font-size: 16px; color: #1A1714">
 <button type="submit" style="margin-top: 8px; min-height: 56px; border: 0; border-radius: 999px; background: #4E2B22; color: #FBF5EC; font-family: Figtree, sans-serif; font-size: 15px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; gap: 10px" data-tina-field={tf(c.join, 'button')}>{c.join.button}<svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FBF5EC" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="M13 6l6 6-6 6"></path></svg></button>
-<p style="margin: 0; font-size: 14px; color: #5A4A42">Read our <a href="#privacy">privacy promise</a>.</p>
+<p style="margin: 0; font-size: 14px; color: #5A4A42">Read our <a href={`${base}/privacy`}>privacy policy</a>.</p>
 <p data-signup-status role="status" aria-live="polite" hidden style="margin: 0; flex: 1 1 100%; font-size: 16px; font-weight: 600; color: #4E2B22"></p>
 </form>
 </div>
@@ -337,21 +334,11 @@ const t = c.tracking;
 </main>
 
 <footer style="border-top: 1px solid #E6D9C9; background: #FFFCF7">
-<div style="max-width: 1200px; margin: 0 auto; padding: 64px 24px 48px; display: flex; flex-wrap: wrap; gap: 40px 64px; font-size: 14px; color: #5A4A42">
-<section id="privacy" aria-labelledby="privacy-title" style="flex: 1 1 360px; min-width: 0; display: flex; flex-direction: column; gap: 12px">
-<h2 id="privacy-title" style="margin: 0 0 4px; font-family: 'Cormorant Garamond', Georgia, serif; font-size: 20px; line-height: 1.2; font-weight: 700; color: #1A1714" data-tina-field={tf(c.privacy, 'title')}>{c.privacy.title}</h2>
-{c.privacy.paragraphs.map((p, i) => <p style="margin: 0; line-height: 1.6" set:html={inline(p)} data-tina-field={tf(c.privacy, 'paragraphs', i)}></p>)}
-</section>
-<section id="terms" aria-labelledby="terms-title" style="flex: 1 1 360px; min-width: 0; display: flex; flex-direction: column; gap: 12px">
-<h2 id="terms-title" style="margin: 0 0 4px; font-family: 'Cormorant Garamond', Georgia, serif; font-size: 20px; line-height: 1.2; font-weight: 700; color: #1A1714" data-tina-field={tf(c.terms, 'title')}>{c.terms.title}</h2>
-{c.terms.paragraphs.map((p, i) => <p style="margin: 0; line-height: 1.6" set:html={inline(p)} data-tina-field={tf(c.terms, 'paragraphs', i)}></p>)}
-</section>
-</div>
 <div style="max-width: 1200px; margin: 0 auto; padding: 24px 24px 40px; border-top: 1px solid #E6D9C9; display: flex; flex-wrap: wrap; gap: 16px 32px; align-items: center; justify-content: space-between; font-size: 14px; color: #5A4A42">
 <span style="font-family: 'Cormorant Garamond', Georgia, serif; font-size: 22px; color: #1A1714"><span style="font-weight: 700">mama</span><span style="font-style: italic">says</span></span>
 <div style="display: flex; flex-wrap: wrap; gap: 8px 24px; align-items: center">
-<a href="#privacy" style="min-height: 44px; display: inline-flex; align-items: center">Privacy</a>
-<a href="#terms" style="min-height: 44px; display: inline-flex; align-items: center">Terms</a>
+<a href={`${base}/privacy`} style="min-height: 44px; display: inline-flex; align-items: center">Privacy</a>
+<a href={`${base}/terms`} style="min-height: 44px; display: inline-flex; align-items: center">Terms</a>
 <a href={`mailto:${c.footer.contactEmail}`} style="min-height: 44px; display: inline-flex; align-items: center">Contact</a>
 <button type="button" id="motion-toggle" aria-pressed="false" style="min-height: 44px; padding: 0; border: 0; background: none; color: #4E2B22; font-family: Figtree, sans-serif; font-size: 14px; text-decoration: underline; text-underline-offset: 3px; cursor: pointer; display: inline-flex; align-items: center"><span data-state="playing" data-tina-field={tf(c.footer, 'pauseLabel')}>{c.footer.pauseLabel}</span><span data-state="paused" hidden data-tina-field={tf(c.footer, 'playLabel')}>{c.footer.playLabel}</span></button>
 <button type="button" id="consent-reopen" hidden style="min-height: 44px; padding: 0; border: 0; background: none; color: #4E2B22; font-family: Figtree, sans-serif; font-size: 14px; text-decoration: underline; text-underline-offset: 3px; cursor: pointer; align-items: center" data-tina-field={tf(c.consent, 'manageLabel')}>{c.consent.manageLabel}</button>
@@ -366,14 +353,7 @@ const t = c.tracking;
 
 </div>
 
-<div id="consent-banner" role="dialog" aria-labelledby="consent-title" aria-describedby="consent-text" hidden>
-  <h2 id="consent-title" data-tina-field={tf(c.consent, 'title')}>{c.consent.title}</h2>
-  <p id="consent-text" data-tina-field={tf(c.consent, 'text')}>{c.consent.text}</p>
-  <div class="actions">
-    <button type="button" data-choice="granted" data-tina-field={tf(c.consent, 'accept')}>{c.consent.accept}</button>
-    <button type="button" data-choice="denied" data-tina-field={tf(c.consent, 'decline')}>{c.consent.decline}</button>
-  </div>
-</div>
+<ConsentBanner consent={c.consent} tf={tf} />
 <script>
   import '../scripts/site';
 </script>

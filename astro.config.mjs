@@ -1,5 +1,6 @@
 import { defineConfig } from 'astro/config';
 import { fileURLToPath } from 'node:url';
+import rehypeBaseLinks from './src/lib/rehype-base-links.mjs';
 
 // Two build modes from one codebase:
 //
@@ -13,9 +14,12 @@ import { fileURLToPath } from 'node:url';
 // For a custom domain on the public site, set SITE_URL (e.g. https://mamasays.com) and BASE_PATH=/
 const editor = process.env.TINA_EDITOR === 'true';
 
+const base = editor ? '/' : process.env.BASE_PATH || '/mamasay';
+
 const config = {
   site: process.env.SITE_URL || 'https://grugna.github.io',
-  base: editor ? '/' : process.env.BASE_PATH || '/mamasay',
+  base,
+  markdown: { rehypePlugins: [[rehypeBaseLinks, { base }]] },
   trailingSlash: 'ignore',
   vite: {
     define: { __TINA_EDITOR__: JSON.stringify(editor) },

@@ -138,14 +138,6 @@ export default defineConfig({
             text('successMessage', 'After a successful sign-up'),
             text('errorMessage', 'If something goes wrong'),
           ]),
-          obj('privacy', 'Privacy text (footer)', [
-            str('title', 'Title'),
-            list(text('paragraphs', 'Paragraphs', 'Links: [text](mailto:you@example.com)')),
-          ]),
-          obj('terms', 'Terms text (footer)', [
-            str('title', 'Title'),
-            list(text('paragraphs', 'Paragraphs')),
-          ]),
           obj('footer', 'Footer', [
             str('copyright', 'Copyright line'),
             str('contactEmail', 'Contact email'),
@@ -178,6 +170,24 @@ export default defineConfig({
             list(str('consentCountries', 'Countries that see the cookie banner (2-letter codes)')),
             list(str('consentUsStates', 'US states that see the cookie banner (2-letter codes)')),
           ]),
+        ],
+      },
+      {
+        // Privacy Policy and Terms of Service: one Markdown file each, shown at /privacy and /terms.
+        name: 'legal',
+        label: 'Privacy & Terms',
+        path: 'src/content/legal',
+        format: 'md',
+        ui: {
+          allowedActions: { create: false, delete: false },
+          router: ({ document }: { document: { _sys: { filename: string } } }) => `/${document._sys.filename}`,
+        },
+        fields: [
+          str('title', 'Page title', { required: true }),
+          str('effective', 'Effective date (Privacy Policy only)', { description: 'e.g. March 1, 2027' }),
+          str('lastUpdated', 'Last updated', { required: true, description: 'e.g. March 1, 2027' }),
+          { type: 'boolean', name: 'draft', label: 'Show "DRAFT for legal review" banner and hide from search engines' },
+          { type: 'rich-text', name: 'body', label: 'Text', isBody: true },
         ],
       },
     ],

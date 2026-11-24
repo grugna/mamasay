@@ -160,6 +160,9 @@ astro.config.mjs           Site URL + base path, and the public vs editor build 
 design/mockup-hybrid.html  Original design export (reference only)
 public/                    Served as-is: fonts/ (self-hosted), images/, favicon.svg
 src/content/site.json      All editable content and settings
+src/content/legal/         Privacy Policy and Terms of Service (Markdown, editable in Tina under "Privacy & Terms")
+src/layouts/Legal.astro    Page layout for /privacy and /terms (pages: src/pages/privacy.astro, terms.astro)
+src/components/            ConsentBanner.astro (shared cookie banner)
 src/pages/index.astro      The page template (HTML + inline styles from the mockup)
 src/styles/global.css      Global CSS, animations, cookie-banner styles
 src/lib/content.ts         Loads site.json (public build) or reads via Tina (editor build)
@@ -172,6 +175,7 @@ src/scripts/               Browser code: motion.ts (scroll reveal, pause toggle)
 ### Common developer tasks
 
 - **Add an editable field:** add it to `src/content/site.json`, render it in `src/pages/index.astro` (as `{c.section.field}`) with `data-tina-field={tf(c.section, 'field')}` on the element, and add it to `tina/config.ts` so it shows in the editor.
+- **Edit the Privacy Policy / Terms:** edit `src/content/legal/privacy.md` or `terms.md` (or use "Privacy & Terms" in Tina). Update `lastUpdated`, and set `draft: false` to remove the draft banner and `noindex` once legal has signed off.
 - **Change colors / animation speed:** `palette` and `settings.motion` in `site.json`.
 - **Add an image:** put it in `public/images/` and reference it as `/images/name.jpg` (the page prepends the base path).
 - **Change who sees the cookie banner:** `tracking.consentCountries` / `tracking.consentUsStates`.

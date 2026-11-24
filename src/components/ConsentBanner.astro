@@ -1,0 +1,12 @@
+---
+// Cookie banner markup; behavior lives in src/scripts/consent.ts.
+const { consent, tf } = Astro.props;
+---
+<div id="consent-banner" role="dialog" aria-labelledby="consent-title" aria-describedby="consent-text" hidden>
+  <h2 id="consent-title" data-tina-field={tf(consent, 'title')}>{consent.title}</h2>
+  <p id="consent-text" data-tina-field={tf(consent, 'text')}>{consent.text}</p>
+  <div class="actions">
+    <button type="button" data-choice="granted" data-tina-field={tf(consent, 'accept')}>{consent.accept}</button>
+    <button type="button" data-choice="denied" data-tina-field={tf(consent, 'decline')}>{consent.decline}</button>
+  </div>
+</div>
